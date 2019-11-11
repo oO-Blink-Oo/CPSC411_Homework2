@@ -52,6 +52,7 @@ public class CourseListAdapter extends BaseAdapter {
         ((TextView) row_view.findViewById(R.id.course_id_row)).setText(mCourseEnrollments.get(i).getCourseID());
         ((TextView) row_view.findViewById(R.id.grade_id_row)).setText(mCourseEnrollments.get(i).getGrade());
 
+
         // returns the view for the current row
         return row_view;
     }

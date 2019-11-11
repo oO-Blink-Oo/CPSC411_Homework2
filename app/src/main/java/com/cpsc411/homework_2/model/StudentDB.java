@@ -10,6 +10,7 @@ public class StudentDB { //This is a singleton
 
 
     private ArrayList<Student> mStudentList; //this holds the list of students in our DB
+    private ArrayList<CourseEnrollment> mCourses;
     private int mAmountOfCourses;
 
     private Student tempStudent;
@@ -22,22 +23,24 @@ public class StudentDB { //This is a singleton
 
     public int getAmountOfCourses() { return mAmountOfCourses;}
 
+    public void setCourses(ArrayList<CourseEnrollment> c) { mCourses = c; }
+
 
     protected void createStudentObjects() {
         Student student = new Student("Ian", "Alvarez", "123456");
-        ArrayList<CourseEnrollment> courses = new ArrayList<CourseEnrollment>();
-        courses.add(new CourseEnrollment("CPSC 411","A+"));
-        courses.add(new CourseEnrollment("CPSC 349", "A"));
-        mAmountOfCourses = courses.size();
-        student.setCourses(courses);
+        mCourses = new ArrayList<CourseEnrollment>();
+        mCourses.add(new CourseEnrollment("CPSC 411","A+"));
+        mCourses.add(new CourseEnrollment("CPSC 349", "A"));
+        mAmountOfCourses = mCourses.size();
+        student.setCourses(mCourses);
         mStudentList = new ArrayList<Student>();
         mStudentList.add(student);
 
         student = new Student("Joesh", "Bautista","654321");
-        courses = new ArrayList<CourseEnrollment>();
-        courses.add(new CourseEnrollment("CPSC 349", "A"));
-        courses.add(new CourseEnrollment("CPSC 454", "C+"));
-        courses.add(new CourseEnrollment("CPSC 411", "A"));
+        mCourses = new ArrayList<CourseEnrollment>();
+        mCourses.add(new CourseEnrollment("CPSC 349", "A"));
+        mCourses.add(new CourseEnrollment("CPSC 454", "C+"));
+        mCourses.add(new CourseEnrollment("CPSC 411", "A"));
         mStudentList.add(student);
 
     }

@@ -99,6 +99,7 @@ public class BlankStudentDetailsActivity extends AppCompatActivity {
             //add this student to the db
             StudentDB.getInstance().getStudentList().add(studentObj);
 
+
             detailMenu.findItem(R.id.blank_action_edit).setVisible(false);
             detailMenu.findItem(R.id.blank_action_add).setVisible(false);
             detailMenu.findItem(R.id.blank_action_done).setVisible(true);
